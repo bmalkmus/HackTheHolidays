@@ -1,7 +1,7 @@
 pragma solidity ^0.7.3;
 
 contract JokesList {
-    uint jokeCount = 0;
+    uint public jokeCount = 0;
 
     struct Joke {
         uint id;
