@@ -1,0 +1,102 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+.fontBgd {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.fontBgd h4 {
+    color: whitesmoke;
+}
+
+
+h1{
+    height: 30%;
+    font-size: 75px;
+    text-align: center;
+    background-image: url("./images/brickWall.png");
+    background-attachment: fixed;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.indJoke{
+    height: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.indJoke:nth-child(even){
+    background-color: rgb(63,59,59);
+    margin: 20px;
+    box-shadow: 5px 5px 20px whitesmoke, 2px 5px 10px blue;
+    border-radius: 25px;
+}
+.indJoke:nth-child(odd){
+    background-color: rgb(70,62,62);
+    margin: 20px;
+    box-shadow: 5px 5px 20px purple, 2px 5px 10px gold;
+    border-radius: 25px;
+}
+form{
+    width: 80%;
+}
+input {
+    background-color: grey;
+    color: whitesmoke;
+    width: 35%;
+}
+
+label {
+    color:whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+::placeholder {
+    color:whitesmoke;
+}
+
+.setUp{
+    color:whitesmoke;
+    font-size: 25px;
+}
+.votes{
+    color: yellow;
+    font-size: 22px;
+    text-shadow: 3px 3px 4px limegreen, 2px 2px 5px yellowgreen;
+}
+.punchLine{
+    width:100%;
+    text-align: center;
+    height:30%;
+    font-size: 20px;
+    color: transparent
+}
+.punchLine:hover{
+    color: gold;
+    text-shadow: 2px 2px 4px yellow, 3px 4px 10px blue;
+    cursor: pointer;
+}
+
+button {
+    margin: 20;
+    background-color: grey;
+    color: black
+}
+
+button:hover{
+    box-shadow: 1px 1px 30px yellow;
+    color: blueviolet;
+}

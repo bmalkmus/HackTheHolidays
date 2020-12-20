@@ -1,4 +1,5 @@
 import React , {useRef} from 'react'
+import "./style.css"
 
 function JokeList({jokes, account, jokesCount, addJoke, Funny, NotFunny}) {
     const setUpRef = useRef();
@@ -20,10 +21,17 @@ function JokeList({jokes, account, jokesCount, addJoke, Funny, NotFunny}) {
             NotFunny(event.target.dataset.id)
         }
     }
+
+    function hover(event){
+        event.target.style.visibility="visible"
+    }
+
     return (
-        <div>
-            <h1>Account: {account}</h1>
-            <h3>Joke Count: {jokesCount} </h3>
+        <div className="wrapper">
+            <div className="fontBgd">
+                <h1>Jokes on the Block</h1>
+                <h4>Account: {account}</h4>
+            </div>
             <form onSubmit={Submit}>
                 <label>
                  Add a new Joke: 
@@ -32,14 +40,14 @@ function JokeList({jokes, account, jokesCount, addJoke, Funny, NotFunny}) {
                 </label>
                 <input type="submit" hidden={true}/>
             </form>
-            <ul>
-                {[...jokes].map(joke => {
+            <ul className = "jokeContainer">
+                {[...jokes].sort((a,b)=>{return b.votes - a.votes}).map(joke => {
                     return(
-                    <li key = {joke.id}>
-                        <span>{joke.setUp}</span>
-                        <span>{joke.punchLine}</span>
-                        <span>{joke.votes}</span>
-                        <span><button data-id={joke.id} value="Funny" onClick={ButtonPress}>Funny</button><button onClick={ButtonPress} value="Not" data-id={joke.id}>Not Funny</button></span>
+                    <li className='indJoke' key = {joke.id}>
+                        <span className="votes">Laugh Count:{joke.votes}</span>
+                        <span className='setUp'>{joke.setUp}</span>
+                        <span className='punchLine' onMouseOver={hover}>{joke.punchLine}</span>
+                        <span className="buttons"><button data-id={joke.id} value="Funny" onClick={ButtonPress}>Funny</button><button onClick={ButtonPress} value="Not" data-id={joke.id}>Not Funny</button></span>
                     </li>
                     )
                 })}
