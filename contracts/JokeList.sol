@@ -36,12 +36,14 @@ contract JokesList {
     function jokeFunny(uint _id) public {
         Joke memory _joke = jokes[_id];
         _joke.votes++;
+        require(_joke.votes > jokes[_id].votes, "Uint256 overflow");
         jokes[_id] = _joke;
         emit JokeVoted(_id, _joke.votes);
     }
     function jokeNotFunny(uint _id) public {
         Joke memory _joke = jokes[_id];
         _joke.votes--;
+        require(_joke.votes < jokes[_id].votes, "Uint256 underflow");
         jokes[_id] = _joke;
         emit JokeVoted(_id, _joke.votes);
     }
